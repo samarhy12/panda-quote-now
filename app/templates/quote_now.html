@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Panda Shop - Quote Request</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon" />
+
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans:300,400|Source+Code+Pro:700,900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Meta Description -->
+    <meta
+      name="description"
+      content="Panda Shop offers both wholesale and retail products with items shipped from Vietnam. Providing quality products at competitive prices with exceptional service."
+    />
+
+    <!-- Meta Keywords -->
+    <meta
+      name="keywords"
+      content="Panda Shop, wholesale, retail, quality products, shipping from Vietnam, competitive prices, exceptional service"
+    />
+
+    <!-- Meta Author -->
+    <meta name="author" content="Panda Shop" />
+
+    <!-- CSS Libraries -->
+    <link
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link href="lib/slick/slick.css" rel="stylesheet" />
+    <link href="lib/slick/slick-theme.css" rel="stylesheet" />
+
+    <!-- Template Stylesheet -->
+    <link
+      href="{{url_for('static', filename='css/styles.css')}}"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <div class="px-4 py-5 my-5 text-center">
+      <img
+        class="d-block mx-auto mb-4"
+        src="{{ url_for('static',
+        filename='images/logo.png')}}"
+        alt=""
+        width="72"
+        height="57"
+      />
+      <h1 class="display-5 fw-bold text-body-emphasis">Request a quote</h1>
+      <div class="col-lg-6 mx-auto">
+        <p class="lead mb-4">
+          If you're interested in purchasing our products in bulk, please fill
+          out the form below to request a quote. After submitting your request,
+          our team will review the details and reach out to you promptly to
+          discuss your needs and provide a customized quote. This is the first
+          step in securing quality products at competitive prices, shipped
+          directly from Vietnam. We look forward to assisting you with your
+          wholesale order!
+        </p>
+        <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+          <a
+            href="#Quote"
+            type="button"
+            class="btn btn-primary btn-lg px-4 gap-3 mr-2"
+          >
+            Quote Now
+          </a>
+          <a
+            href="https://pandagh.com"
+            type="button"
+            class="btn btn-outline-secondary btn-lg px-4"
+          >
+            Back to store
+          </a>
+        </div>
+      </div>
+    </div>
+    <!-- Breadcrumb Start -->
+    <div class="breadcrumb-wrap">
+      <div class="container-fluid">
+        <ul class="breadcrumb">
+          <li class="breadcrumb-item">
+            <a href="#">Home</a>
+          </li>
+          <li class="breadcrumb-item active">Request a Quote</li>
+        </ul>
+      </div>
+    </div>
+    <!-- Breadcrumb End -->
+
+    <!-- Quote Request Start -->
+    <div class="quote-request mt-4" id="Quote">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="quote-form">
+              <form
+                method="POST"
+                action="{{ url_for('request_quote') }}"
+                enctype="multipart/form-data"
+              >
+                <div class="row">
+                  <div class="col-md-6 mb-3">
+                    <label>Name</label>
+                    <input
+                      class="form-control"
+                      type="text"
+                      name="name"
+                      placeholder="Your Name"
+                      required
+                    />
+                  </div>
+                  <div class="col-md-6 mb-3">
+                    <label>Email</label>
+                    <input
+                      class="form-control"
+                      type="email"
+                      name="email"
+                      placeholder="Your Email"
+                      required
+                    />
+                  </div>
+                  <div class="col-md-6 mb-3">
+                    <label>Contact Number</label>
+                    <input
+                      class="form-control"
+                      type="text"
+                      name="contact"
+                      placeholder="Your Contact Number"
+                      required
+                    />
+                  </div>
+                  <div class="col-md-6 mb-3">
+                    <label>Company Name (Optional)</label>
+                    <input
+                      class="form-control"
+                      type="text"
+                      name="company"
+                      placeholder="Your Company Name"
+                    />
+                  </div>
+                  <div class="col-md-6 mb-3">
+                    <label>Items and Sample Images</label>
+                    <input
+                      class="form-control"
+                      type="text"
+                      name="items"
+                      placeholder="Enter items and attach sample images (if any)"
+                    />
+                  </div>
+                  <div class="col-md-12 mb-3">
+                    <label>Upload Sample Images (Optional)</label>
+                    <input
+                      class="form-control-file"
+                      type="file"
+                      name="sample_images"
+                      accept="image/*"
+                      multiple
+                    />
+                  </div>
+                  <div class="col-md-12 mb-3">
+                    <label>Details</label>
+                    <textarea
+                      class="form-control"
+                      name="details"
+                      rows="4"
+                      placeholder="Provide details about your request or order"
+                      required
+                    ></textarea>
+                  </div>
+                  <div class="col-md-12">
+                    <button class="btn btn-primary" type="submit">
+                      Submit Request
+                    </button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Quote Request End -->
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/slick/slick.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+  </body>
+</html>
